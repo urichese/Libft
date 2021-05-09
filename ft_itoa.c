@@ -14,10 +14,8 @@ char		*ft_itoa(int n)
 {
 	char	*ptr;
 	int		len;
-	int		i;
 	long	nb;
 
-	i = -1;
 	len = count(n);
 	nb = n;
 	len = (n < 0) ? len + 1 : len;
@@ -35,5 +33,4 @@ char		*ft_itoa(int n)
 		nb /= 10;
 	}
 	return (ptr);
-
-
+}

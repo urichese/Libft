@@ -1,10 +1,21 @@
+#include <stdlib.h>
+#include "libft.h"
+
+int 	in_set(char const *s, char c)
+{
+	while (*s)
+		if (*s++ == c)
+			return (1);
+	return (0);
+}
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*s2;
 	int		i;
 	int 	l;
 	int 	s;
-	int 	e
+	int 	e;
 
 	i = 0;
 	s = 0;
@@ -20,12 +31,4 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (s1[s])
 		*s2 = s1[s++];
 	return (s2);
-}
-
-int 	in_set(char *s, char c)
-{
-	while (*s)
-		if (*s++ == c)
-			return (1);
-	return (0);
 }
