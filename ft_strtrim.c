@@ -3,6 +3,8 @@
 
 int 	in_set(char const *s, char c)
 {
+	if (!s)
+		return (0);
 	while (*s)
 		if (*s++ == c)
 			return (1);
@@ -12,23 +14,27 @@ int 	in_set(char const *s, char c)
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*s2;
-	int		i;
 	int 	l;
-	int 	s;
-	int 	e;
+	int 	start;
+	int 	end;
+	int 	i;
 
+	if (!s1)
+		return (NULL);
+	start = 0;
 	i = 0;
-	s = 0;
 	while (in_set(set, s1[i++]))
-		s++;
+		start++;
 	l = ft_strlen(s1);
-	e = 0;
+	end = 0;
 	while (in_set(set, s1[--l]))
-		e++;
-	s2 = (char *)malloc(sizeof(char) * (ft_strlen(s1) - s - e));
+		end++;
+	if (start == end && start == (int)ft_strlen(s1))
+		end = 0;
+	l = ft_strlen(s1) - start - end;
+	s2 = (char *) malloc(sizeof(char) * (l + 1));
 	if (!s2)
 		return (NULL);
-	while (s1[s])
-		*s2 = s1[s++];
+	ft_strlcpy(s2, s1 + start, l + 1);
 	return (s2);
 }

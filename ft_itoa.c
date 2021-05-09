@@ -27,8 +27,11 @@ char		*ft_itoa(int n)
 		nb = -nb;
 	}
 	ptr[len] = '\0';
-	while (--len)
+	//len = (n < 0) ? len - 1 : len;
+	while (len--)
 	{
+		if (n < 0 && len == 0)
+			break;
 		ptr[len] = nb % 10 + '0';
 		nb /= 10;
 	}
