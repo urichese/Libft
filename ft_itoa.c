@@ -1,4 +1,4 @@
-#include <stdlib.h>
+#include "libft.h"
 
 static int	count(int n)
 {

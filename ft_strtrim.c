@@ -1,4 +1,3 @@
-#include <stdlib.h>
 #include "libft.h"
 
 int 	in_set(char const *s, char c)

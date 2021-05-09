@@ -1,4 +1,3 @@
-#include <stdlib.h>
 #include "libft.h"
 
 static int	c_w(char const *s, char c)
